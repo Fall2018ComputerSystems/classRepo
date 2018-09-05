@@ -1,11 +1,10 @@
-# classRepo
 # Your name here (TODO: Change this heading to your name)
 # Phonetic spelling of your name here (TODO: Change this heading to your name)
 
 # Partners Spreadsheet
-Find your lab partner(s) here: https://docs.google.com/spreadsheets/d/1ORbEDLNAFzAMT4FbUeMy1wUdxxUpqs7wNUR8s4OUByY/edit?usp=sharing
+Find your lab partner(s) here: add link from BB group or google spreasheets  
 
-# The Monorepo
+# classRepo 
 
 Welcome to Computer Systems! This repository will be how to retrieve homework assignments and in-class lab assignments.
 
@@ -41,9 +40,11 @@ That being said, I can only grade what you have **pushed** to your repo. Make su
 ## Logistics
 For all assignments, you must login into the servers through `your_ccis_name@login.ccs.neu.edu` to complete the assignments. The reason is because the examples I will provide below are compiled strictly for our machines architecture, and this is where your submission will be graded. While it is true you can probably do much of the assignments locally (if you have a Mac, Windows Terminal, or Linux machine), you **must** make sure your submissions work on the ccis servers.
 
-## Monorepo
+## classRepo is a Monorepo
 
 A monorepo is known as a 'monolithic' repository. Companies like Google for instance have nearly all of their code from every single employee in one single repository. Some companies choose to have many separate repositories. Which strategy would you think is better? Take a moment to think about it, and you can read more on the 'why' (at least for Google) and other companies below: 
 
 * https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext
 * https://danluu.com/monorepo/
+
+[Mike Shah. monoRepo for CS3650]
