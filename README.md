@@ -2,7 +2,7 @@
 # Phonetic spelling of your name here (TODO: Change this heading to your name)
 
 # Partners Spreadsheet
-Find your lab partner(s) here: add link from BB group or google spreasheets  
+Find your lab partner(s) here: https://docs.google.com/spreadsheets/d/18Lp1QU3qIa0D_Ijb8TTt0-i_3Xz0A43X9CzuWgnlUK0/edit?usp=sharing  
 
 # classRepo 
 
