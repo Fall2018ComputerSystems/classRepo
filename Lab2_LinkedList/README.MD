@@ -237,11 +237,12 @@ curl -s http://www.ccs.neu.edu/home/awjacks/cs3650f18/Labs/2/usdeclar.txt | awk 
 Your second task is to read in the data you have generated and store it in a linked list.
 
 Your guidelines for this task are:
-1. Write a function that creates a Linked list and reads in the data. 
-	1. This means your must allocate on the heap. (e.g. Hmm, something like this ??? create_list(???)).
-2. Create a second function (print_list) that prints out the data, and outputs it in some meaningful way.
+1. Write a function (create_list) that creates a Linked list and reads data line by line from a text file. 
+	1. *Hint* This means within your function you must allocate on the heap.
+2. Create a second function (print_list) that iterates through the linked list and prints out the data.
+	1. The data should be output it in some meaningful way.
 3. Write a third function(free_list) that free's your linked list.
-	1. When your program terminates, make sure to properly deallocate (free) each node in the linked list.
+	1. This means you are calling 'free' on each node you have malloc'd. Think carefully about how to do this. How will you know this works?
 
 ### Example output with redsox data
 
@@ -259,10 +260,10 @@ In our print_list function, as it is traversed, based on the value found, the da
 ```
 
 **Hints**
-- What does this code do? ``` node_t* new_node = (node*)malloc(sizeof(node));```
-- Would it be useful to make a ```node_t* create(int data, node* next)``` function?
+- What does this code do? ``` node_t* new_node = (node_t*)malloc(sizeof(node_t));```
+- Would it be useful to make a ```node_t* create_node(int data, node_t* next)``` function?
   - You may use the http://www.zentut.com/c-tutorial/c-linked-list/ resource as a reference. Cite sources in your source file if you use them.
-- Depending on the data you read in, it may be text or integer based.
+- Depending on the data you read in, it may be text or integer based--adapt your function signatures as needed.
 
 # Deliverable
 
