@@ -1,6 +1,6 @@
 # Due Date: October 16, 2018 at 11:59 PM.
 
-TODO Please edit the following information in your assignment
+TODO: Please edit the following information in your assignment.
 
 - Name:
 - How many hours did it take you to complete this assignment?
@@ -227,14 +227,14 @@ int main(){
 # Rubric
 
 1. 10% for completing Part 1 - Parse
-3. 90% for completing Part 3 - Mini-Shell (rough rubric below)
+3. 90% for completing Part 3 - Mini-Shell (Part 3 rubric below)
 	1. 20% 1 Built-in command of your choice (and documentation)
 		1. e.g. A 'clear' or print command will not earn full marks. Do something creative! (Search the web for examples)
 	2. 20% 3 built-in commands (cd, help, exit).
 	3. 10% A working signal handler
 	4. 20% A shell that runs forever and has the 'mini-shell>' prompt and properly parses programs.
 		- You should avoid [fork bombs](https://en.wikipedia.org/wiki/Fork_bomb). As you are learning the fork command, it may be helpful to test on virtual box as opposed to the CCIS servers. :)
-	5. 20% Can successfully execute processse in the foreground.
+	5. 20% Can successfully execute processses in the foreground.
 
 # Resources to help
 
