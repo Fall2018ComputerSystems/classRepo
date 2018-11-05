@@ -10,10 +10,10 @@
 #include <immintrin.h>
 
 // Now I want to talk about a few handy functions in the AVX library that
-// are things we frequently do as programmers. That is, initialize our data.
-// to various values.
+// are things we frequently do as programmers. 
+// The first is initializing our data to a starting value.
 //
-// But before we do that, let us make two assumptions
+// Additionally, here are two requirements in this sample.
 // (1) 	We are going to work with floats
 // (2) 	It would be nice to be able to have a function to print out
 // 	floats given an __m256 data type.
@@ -40,6 +40,7 @@ int main(){
 	//
 	// TODO: Experiment with following commands below, and print out the values.
 	//	 If you do not know what the command does, look it up in the intrinsics guide.
+	//	 Intrinsics guide: https://software.intel.com/sites/landingpage/IntrinsicsGuide/
 	// 
 	// _mm256_setzero_ps
 	// _mm256_set1_ps
@@ -53,27 +54,29 @@ int main(){
 	print__m256(test1);
 	print__m256(test2);
 
-
-	// Those commands are nice ways to very quickly fill up a value.
+	// The previous 'setzero' and 'set1' commands are nice ways to very quickly fill up a __m256 register.
 	// In C we have a command 'memset' which zeros out a number of bytes in an array.
-	// If we want to explicitly set the values, we have the following:
+	// Sometimes however, we want to explicitly set individual values.
+	// In AVX2 we have the following intrinsic functions:
 	//
-	// _mm256_set_ps(0..7)
-	// _mm256_setr_ps(7..0)
+	// _mm256_set_ps(0,...,7); 
+	// _mm256_setr_ps(7,...,0);
+	//
+	// Here is the actual signature for conveinience. Again, look in the intrinsics guide for exact syntax:
+	// __m256 _mm256_set_ps (float e7, float e6, float e5, float e4, float e3, float e2, float e1, float e0)
 	//
 	// Try to use each of these commands and print out the result.
 
-	test1 = ...
+	test3 = ...
 	
 	printf("=========Printing _mm256_set_ps=========\n\n");
-	print__m256(test1);
+	print__m256(test3);
 
-	// Now why might we have a version of set and setr?
-	// Well, again remember from our previous discussion that the order matters.
-	// Intel machines are typically little-endian based architectures.
+	// Now why might we have a version of set and setr? (The 'r' at the end means reverse, referring to ordering of arguments)
+	// Intel machines are typically little-endian based architectures, this means order of our bits matters
+	// (Remember with our intrinsics, we are just playing around with a 'bucket of 256 bits' if that is helpful to think about.).
 	//
 	// Little-Endian means the least signficant value in the sequence is stored first.
-
 
 	// Okay, so we have spent some time setting data up. But often we
 	// work with data in which we load from memory. We have the ability to do so
@@ -91,7 +94,7 @@ int main(){
 
 	// Let's break that functiond down.
 	// First, we cast to a float*, just as we would have done with a regular malloc.
-	// The first parameter however, describes our alignment, in this case 32 bytes.
+	// The first parameter describes our alignment, in this case 32 bytes.
 	// Remember, our 256-bit vector is divided into nice 32 byte chunks.
 	//
 	// |32|32|32|32|32|32|32|32| = 256 bits
@@ -99,18 +102,16 @@ int main(){
 	//
 	//
 	// And why do we multiply 64 * sizeof(float)?	
-	// Well, we can always check
-
+	// Well, lets verify on our architecture the data size of a float in bytes.
 
 	printf("=========Loading aligned data=========\n");
 	printf("sizeof(float)=%lu\n",sizeof(float));
 	
-	// And hopefully whatever that number is * 64 is 256!
+	// And hopefully whatever our result is for sizeof(float) times 64 is equal to 256!
 	// You can read more here: 
 	// https://www.gnu.org/software/libc/manual/html_node/Aligned-Memory-Blocks.html
 	//
-	// Okay, now let us populate our data.
-	//
+	// Okay, now let us populate our data data in a normal C array.
 	
 	aligned_32[0] = 0.0f;
 	aligned_32[1] = 1.0f;
@@ -121,12 +122,16 @@ int main(){
 	aligned_32[6] = 6.0f;
 	aligned_32[7] = 7.0f;
 
+	// Now we finally load our array of floats into an AVX2 register.
+	// '_mm256_load_ps' is the command to do so.
 	__m256 aligned_avx = _mm256_load_ps(aligned_32);
+	// And of course, we can always debug this working by printing out the individual
+	// values stored in our register.
 	print__m256(aligned_avx);
 
 	// What happens if you need to load data that is unaligned?
-	//
 	// Investigate _mm256_loadu_ps(...) in the intrinsics guide.
+	// The short answer is this command can help us load code aligned on any boundary.
 
 
 	return 0;

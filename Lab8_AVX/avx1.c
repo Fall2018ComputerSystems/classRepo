@@ -31,7 +31,7 @@ int main(){
 	
 	// If we want, we can process these evens all at once.
 	// We do so by creating a 'vector' of data. This is not
-	// to be confused with the data structure vector for those with C++ experience,
+	// to be confused with the data structure 'vector' (for those with C++ experience),
 	// though the concept is similar, in that we are storing chunks of data.
 	
 	
@@ -42,8 +42,7 @@ int main(){
 	float*f = (float*)&evens;
 	printf("%f %f %f %f %f %f %f %f\n", f[0],f[1],f[2],f[3],f[4],f[5],f[6],f[7]);
 	
-
-	// Okay, there were a few interseting things going on with this sample.
+	// Okay, there were a few things going on with this sample.
 	// The first is, what is a __m256 data type?
 	//
 	// The __m is the naming convention for our vector types. The 256 that follows
@@ -88,7 +87,6 @@ int main(){
 		c[24],c[25],c[26],c[27],c[28],c[29],c[30],c[31]
 		);
 		
-
 	// Now we have actually seen quite of new information here.
 	// First off, what is the _mm256_set_epi8 command?
 	//

@@ -27,14 +27,27 @@ int main(){
 	// The arithmetic instructions are name as you might assume.
 	// _mm256_add_ps(__m256 a, __m256 b)
 	//
-	// Now let us actually investigate the intrinsics guide here
+	// Now let us actually investigate the intrinsics guide here for the 'add' function above.
+	// Here is a direct link for convenience.
 	// https://software.intel.com/sites/landingpage/IntrinsicsGuide/#techs=MMX,SSE,SSE2,SSE3,SSSE3,SSE4_1,SSE4_2,AVX,AVX2&expand=4617,130&text=_mm256_add
 	//
-	// What I want to draw to your attention is the 'Operation' section.
+	// What I want to draw to your attention is the 'Operation' section which shows what is going on
+	// for each instruction, referring to what is happening to each of the 256 bits.
+	//
+	// FOR j := 0 to 7
+	//     i := j*32
+	//     dst[i+31:i] := a[i+31:i] + b[i+31:i]
+        // ENDFOR
+        // dst[MAX:256] := 0
+	//
+	//
 	// This is pseudo-code that shows you what is going on in the algorithm.
 	// Intuitively, from 'i' which is the index of each of the
 	// elements (in our case, 8, 32 bit floats) is used as an offset.
 	// The destination is then set to the sum of a and b at each index.
+	//
+	// Try loading some data into registers 'a' and 'b' which we previously learned how to do
+	// Then store the result of their addition in 'dst'.
 	
 	__m256 a = ...
 	__m256 b = _...
@@ -50,11 +63,11 @@ int main(){
 	// How about working with integer data
 	// What about _mm256_add_epi16 vs _mm256_adds_epi16
 	//
-	// Take a look at the documentation for _mm256_adds_epi16. What does saturation
+	// Take a look at the documentation for _mm256_adds_epi16 (note the extra 's' at the end). What does saturation
 	// mean?
 	//
 	//
-	// Here is another fun one to experiment with: horizontal add
+	// Here is another fun one to experiment with: 'horizontal add'
 	//
 	// _mm256_hadd_ps
 	//

@@ -31,22 +31,26 @@ void print__m256i(__m256i data){
 
 int main(){
 
-	// Here we are going to create a mask for integers
-	// Note that the first five values are negative.
-	// We are also using the setr
+     	// Here we are going to create a mask for integers
+     	// A 'mask' is a way to hide or ignore certain data.
+      	// Note in our mask, the first five values are negative, what do you think this will do?
+      	// *Hint* Think about the two's complement representation of bits. The first bit indicates
+      	// whether data will be shown or not--you will confirm by the end of this exercise what
+      	// data is shown.
+      	// We are also using the 'setr'
 	__m256i mask = _mm256_setr_epi32(-1,-1,-1,-1,-1,0,2,3);
 	
 	// Now let us load some data from an array
 	int integers[8] = {1,2,3,4,5,6,7,8};
 
-	// Next our intrinsic command
-	// Why is this an epi32 data type again?
+	// Now let us load data using our mask we previously initialized.
+	// Note: We are using a 'epi32' at the end, because we are storing integer results.
 	__m256i result = _mm256_maskload_epi32(integers,mask);	
-	
-	// Wait, will this print command work, or do I need another one?
+
+	// Wait so if I am using a epi32, will this print command work, or do I need another one?
 	print__m256(result);
 
-	// Perform a print of integer data. 
+	// Here is a new print command to print of integer data. 
 	print__m256i(result);
 
 	// What do you see from the output after loading data based on a mask?
@@ -56,7 +60,7 @@ int main(){
 	// Remember, in twos complement, what negative numbers start with!
 	// Try creating a different bit mask and testing your assumptions
 
-	// Discuss why masking data may be important.
+	// (1) Discuss: Why masking data may be important.
 
 	return 0;
 }
