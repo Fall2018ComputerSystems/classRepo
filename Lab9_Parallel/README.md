@@ -77,7 +77,7 @@ int main(){
 
 #### Example 3 - Synchronization
 
-The previous example does a nice job of spawning many threads that print. However, we do not have any information about how many threads were launched within our parallel-for loop. Let's go ahead and record this information, by storing the number of threads launched. In addition, we will also add some synchronization (i.e. using the barrier pattern) to print the number of threads. The barrier pattern waits for all active threads to arrive, and then proceeds.
+The previous examples do a nice job of spawning many threads that print (one even displaying the thread ID). However, we do not have any information about how many threads were launched within our parallel-for loop. Let's go ahead and record this information, by storing the number of threads launched. In addition, we will also add some synchronization (i.e. using the barrier pattern) to print the number of threads. The barrier pattern waits for all active threads to arrive, and then proceeds.
 
 ```c
 // gcc -std=c99 -fopenmp omp3.c -o omp3
