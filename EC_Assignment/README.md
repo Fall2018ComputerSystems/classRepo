@@ -74,23 +74,28 @@ Node 3 doesn’t have any neighbors that have not already been marked as Visited
 Since the queue is empty, we have completed the Depth First Traversal of the graph
 
 # Task 1: Single Source Shortest Path
-You are given a source node, find the shortest path from the source node 5 to rest of the nodes. Print out the path length from the source node to all the nodes (assume the edge cost is 1 for all edges).  Use the following print format to print the path length “%d -> %d: %d”
+You are given a source node, find the shortest path from the source node 5 to rest of the nodes. Print out the path length from the source node to all the nodes (assume the edge cost is 1 for all edges).  print out the path in an distance ordered list of “(node, distance from source)” pairs separated by commas.  For the example above, the list for source 0 would be: (0, 0), (1, 1), (2, 1), (3, 1), (4, 2).
+
 BFS gives you the shortest path from one node to all the other connected nodes.  You will need to augment the algorithm above to record the path length ( # of levels) to each node you touch.  
 
 
 # Task 2: K-source Shortest Path
-Now you are given K source nodes. Find the shortest path from K nodes to all other nodes. For each source node, print out the path in an distance ordered list of “(node, distance from source)” pairs separated by commas.  For the example above, the list for source 0 would be: (0, 0), (1, 1), (2, 1), (3, 1), (4, 2).
+Now you are given K source nodes. Find the shortest path from K nodes to all other nodes. For each source node, print out the path in an distance ordered list of “(node, distance from source)” pairs separated by commas.  
 
 ## Part 1:
-Write a single thread/process code to iteratively calculate the shortest path from K given nodes.
-Write a multi-process / multi-threaded version (K threads?) to calculate shortest path to all the nodes.  You can use any of the techniques we’re covered, from forking sub-processes, to generating multiple threads explicitly, to using OpenMP.
-Compare the running times for finding K-source shortest paths on your single process implementation versus your multi-thread/process implementation.
+- Write a single thread/process code to iteratively calculate the shortest path from K given nodes.
+- Write a multi-process / multi-threaded version (K threads?) to calculate shortest path to all the nodes.  You can use any of the techniques we’re covered, from forking sub-processes, to generating multiple threads explicitly, to using OpenMP.
+
+Compare the running times for finding K-source shortest paths on your single process implementation versus your multi-thread/process implementation and explain your findings.
+*Your answer here*
 
 ## Part 2:
 Compare the running time (mean and median running time) of both implementations over 101 runs for different size of graphs in the repo.  Select the K source nodes randomly (uniform) for each run.  The node IDs range from 0 to N-1, where N is the number of nodes in the network. Add a table to the README for the mean and median running times for each size network that is in the repo. 
  
-
-
+Graph size | Mean run time (101 runs) | Median run time (101 runs)
+-----------|--------------------------|---------------------------
+8 nodes| nnnn usec | nnnn usec
+... | ... | ...
 
 
 # Part 1 - Exploration Questions
