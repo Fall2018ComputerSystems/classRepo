@@ -15,6 +15,8 @@ TODO Please edit the following information in your assignment
 
 # Logistics
 
+This is an *OPTIONAL* extra credit assignment.  The points you earn will be added to your lowest assignment grade.  You can NOT go over 100% on any assignment.  Any points left over after raising your lowest grade to 100% will be discarded. 
+
 For this assignment, you can use either your Linux VM or the CCS machines.  You will likely have much better performance on the CCS machines. 
 
 # Introduction
@@ -70,10 +72,10 @@ Node 3 doesn’t have any neighbors that have not already been marked as Visited
 
 <img align="center" src="https://cdn.programiz.com/sites/tutorial2program/files/graph-bfs-step-5.jpg" width="600px" alt="picture">
 
-Since the queue is empty, we have completed the Depth First Traversal of the graph
+Since the queue is empty, we have completed the Depth First Traversal of the graph.
 
-# Task 1: Single Source Shortest Path
-You are given a source node, find the shortest path from the source node 5 to rest of the nodes. Print out the path length from the source node to all the nodes (assume the edge cost is 1 for all edges).  print out the path in an distance ordered list of “(node, distance from source)” pairs separated by commas.  For the example above, the list for source 0 would be: (0, 0), (1, 1), (2, 1), (3, 1), (4, 2).
+# Task 1: Single Source Shortest Path (If you do the assignment, you must do Task 1)
+You are given a source node, 5, find the shortest path from the source node to rest of the nodes using BFS. Print out the path length from the source node to all the nodes (assume the edge cost is 1 for all edges).  Print out the path as a distance ordered list of “(node, distance from source)” pairs separated by commas.  For the example above, the list for source 0 would be: (0, 0), (1, 1), (2, 1), (3, 1), (4, 2).
 
 BFS gives you the shortest path from one node to all the other connected nodes.  You will need to augment the algorithm above to record the path length ( # of levels) to each node you touch.  
 
@@ -85,7 +87,16 @@ Now you are given K source nodes. Find the shortest path from K nodes to all oth
 - Write a single thread/process version to iteratively calculate the shortest path from K given nodes.
 - Write a multi-process / multi-threaded version (K threads?) to calculate shortest path to all the nodes.  You can use any of the techniques we’re covered, from forking sub-processes, to generating multiple threads explicitly, to using OpenMP.
 
+Graph| K nodes
+-----|--------
+8-nodes.txt | All nodes
+10-nodes.txt | All nodes
+93-nodes.txt | 3, 47, 18, 26, 57, 27, 63, 6, 57, 52, 74, 52, 30, 24, 56, 87, 37, 78, 34, 64, 52, 80, 8, 44, 59, 27, 16, 55, 60, 43, 27, 16
+100-nodes.txt | 3, 47, 18, 26, 57, 27, 63, 6, 57, 52, 74, 52, 30, 24, 56, 87, 37, 78, 34, 64, 52, 80, 8, 44, 59, 27, 16, 55, 60, 43, 27, 16
+1000-nodes.txt | Do not do for Part 1
+
 Compare the running times for finding K-source shortest paths on your single process implementation versus your multi-thread/process implementation and explain your findings.
+
 	- *Your answer here*
 
 ## Part 2:
@@ -99,12 +110,12 @@ Compare the running time (mean and median running time) of both implementations 
 	- *Your answer here*
 3. What would you have been measuring if you used the same set of K nodes for in the experiment?
 	- *Your answer here*
-4. What other data might you want to collect about the system environment when you ran your experiment?
+4. What other data might you want to collect about the system environment when you ran your experiment to help you compare your results to others running on the same or different types computers?
 	- *Your answer here*
  
-Graph size | Mean run time (101 runs) | Median run time (101 runs)
+Graph  | Mean run time (101 runs) | Median run time (101 runs)
 -----------|--------------------------|---------------------------
-8 nodes| nnnn usec | nnnn usec
+8-nodes.txt| nnnn usec | nnnn usec
 ... | ... | ...
 
 
@@ -114,29 +125,28 @@ Graph size | Mean run time (101 runs) | Median run time (101 runs)
 
 # Rubric
 
-- 20 pts - Task 1
+Specify what Task and parts you wish to be graded. 
 
-- 40 pts - Task 2
-	- 20 pts for Part 1
-	- 20 pts for Part 2
+- 20 points - Task 1
 
-Remember the points you earn are added to your lowest Assignment grade.  You cannot go over 100%.  Extra points will be added to your next lowest lab grade. 
+- 40 points - Task 2
+	- 20 points for Part 1
+	- 20 points for Part 2
+
+Remember the points you earn are added to your lowest Assignment grade.  You cannot go over 100% on any assignment. 
 
      
-### Glossary and Tips
+### Tips
+1. Many on-line sites refer to directed graphs.  The graphs in this assignment are undirected and do not have links that loop back to the same node. 
 1. Commit your code changes to the repository often, this is best practice.
-2. Do not commit your .o file or your executable file to the repository, this is considered bad practice!
-3. On Functionality/Style
+1. Do not commit your .o file or your executable file to the repository, this is considered bad practice!
+1. On Functionality/Style
 	1. You should have comments in your code to explain what is going on, and use good style (80 characters per line maximum for example, functions that are less than 50 lines, well named variables, well named functions etc.).
 
-# Going Further
+### Resources
 
-- Implement a priority queue that runs processes based on their priority number. Every timeslice a process gets, it should then decrement its priority, and then reset its priority to its 'initial' priority for when it was created.
-	- (You can of course modify this heuristic as you like, but think about how to create a 'fair' scheduler).
+[Breadth First Search or BFS for a Graph](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
+[Breadth First Search](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/)
+[Breadth first search](https://www.programiz.com/dsa/graph-bfs)
 
-# Feedback Loop
 
-(An optional task that will reinforce your learning throughout the semester)
-
-- xv6 is based on the original UNIX, Sixth Edition (also called [Version 6 UNIX](https://en.wikipedia.org/wiki/Version_6_Unix))
-	- There is a commentary for the original v6 here: https://en.wikipedia.org/wiki/Lions%27_Commentary_on_UNIX_6th_Edition,_with_Source_Code
