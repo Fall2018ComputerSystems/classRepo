@@ -107,7 +107,9 @@ Graph| K nodes
 100-nodes.txt | 3, 47, 18, 26, 57, 27, 63, 6, 57, 52, 74, 52, 30, 24, 56, 87, 37, 78, 34, 64, 52, 80, 8, 44, 59, 27, 16, 55, 60, 43, 27, 16
 1000-nodes.txt | Do not do for Part 1
 
-Compare the running times for finding K-source shortest paths on your single process implementation versus your multi-thread/process implementation and explain your findings.
+1. Which multi thread/proccess implementation did you choose and why?
+	- *Your answer here*
+1. Compare the running times for finding K-source shortest paths on your single process implementation versus your multi-thread/process implementation and explain your findings.
 
 	- *Your answer here*
 
@@ -128,13 +130,17 @@ Compare the running time (mean and median running time) of both implementations 
 Graph  | Mean run time (101 runs) | Median run time (101 runs)
 -----------|--------------------------|---------------------------
 8-nodes.txt| nnnn usec | nnnn usec
-... | ... | ...
-
+10-nodes.txt | ... | ...
+93-nodes.txt | ... | ...
+100-nodes.txt |... | ...
+1000-nodes.txt | ... | ...
 
 # Deliverable
 
 - Upload bfs.c, k-bfs.c, and k-multi-bfs.c.
 - Specify what Tasks and parts you wish to be graded. 
+	- *Your answer here*
+- Answer the questions in the Task you wish to be graded. 
 
 # Rubric
 
