@@ -19,20 +19,20 @@ For this assignment, you can use either your Linux VM or the CCS machines.  You 
 
 # Introduction
 One of the ways to traverse a graph is using Breadth First Search (BFS).  BFS has several nice qualities:  
-Computes if the graph is connected
-Visits all the vertices of the graph
-Can find a path with the minimum number of edges between any two vertices
-Can find a simple cycle
+- Computes if the graph is connected
+- Visits all the vertices of the graph
+- Can find a path with the minimum number of edges between any two vertices
+- Can find a simple cycle
 
 
 # The Breadth First Search Algorithm
 BFS is an algorithm where you start traversing from a selected node (the source or start node) and traverse the graph layerwise, exploring the neighbor nodes (nodes which are directly connected to source node). One done, you move towards the next-level neighbor nodes.
 
-A graph can contain cycles, which may bring you to the same node again while traversing the graph. To avoid processing of same node again, you need to mark the node after it is processed. 
+A graph can contain cycles, which may bring you to the same node again (and again, and again, ...) while traversing the graph. To avoid processing the same node over and over again, you need to mark the node after it is processed. 
 
 The algorithm puts each node of the graph into one of two categories:
-Visited
-Not Visited
+1. Visited
+1. Not Visited
 
 The goal of the algorithm is to mark each node as visited while avoiding cycles.
 
@@ -48,21 +48,27 @@ The queue follows a First In First Out (FIFO) queuing method, and therefore, the
 If the graph is thought to not be connected, run BFS starting at every node to cover all the nodes. 
 
 # Example:
-Let’s try an example with five nodes.
+Let’s look at an example with five nodes (from https://www.programiz.com/dsa/graph-bfs).
 
-
+<img align="center" src="https://cdn.programiz.com/sites/tutorial2program/files/graph-bfs-step-0.jpg" width="600px" alt="picture">
 
 Let’s start with node 0, the BFS algorithm starts by putting it in the Visited list and putting all its adjacent nodes in the queue.
 
+<img align="center" src="https://cdn.programiz.com/sites/tutorial2program/files/graph-bfs-step-1.jpg" width="600px" alt="picture">
 
 Next, we visit the element at the front of queue i.e. 1 and go to its adjacent nodes. Since 0 has already been visited, we visit 2 instead (which is at the front of the queue).
 
+<img align="center" src="https://cdn.programiz.com/sites/tutorial2program/files/graph-bfs-step-2.jpg" width="600px" alt="picture">
 
 Node 2 has an unvisited adjacent node in 4, so we add that to the back of the queue and visit 3, which is at the front of the queue.
 
+<img align="center" src="https://cdn.programiz.com/sites/tutorial2program/files/graph-bfs-step-3.jpg" width="600px" alt="picture">
+
+<img align="center" src="https://cdn.programiz.com/sites/tutorial2program/files/graph-bfs-step-4.jpg" width="600px" alt="picture">
+
 Node 3 doesn’t have any neighbors that have not already been marked as Visited.  So we mark it as Visited and visit node 4, which is at the front of the queue. 
 
-
+<img align="center" src="https://cdn.programiz.com/sites/tutorial2program/files/graph-bfs-step-5.jpg" width="600px" alt="picture">
 
 
 Since the queue is empty, we have completed the Depth First Traversal of the graph
