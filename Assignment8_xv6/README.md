@@ -151,7 +151,7 @@ struct proc {
 # Deliverable
 
 - Run 'make clean' on your xv6 directory.
-	- Then upload your xv6 repository to github.
+	- Then upload your xv6 repository to github in a directory named 'xv6'.
 
 # Rubric
 
