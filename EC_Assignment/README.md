@@ -15,7 +15,7 @@ TODO Please edit the following information in your assignment
 
 # Logistics
 
-This is an *OPTIONAL* extra credit assignment.  The points you earn will be added to your lowest assignment grade.  You can NOT go over 100% on any assignment.  Any points left over after raising your lowest grade to 100% will be discarded. 
+__This is an *OPTIONAL* extra credit assignment.  The points you earn will be added to your lowest assignment grade.  You can NOT go over 100% on any assignment.  Any points left over after raising your lowest grade to 100% will be discarded.  Task 1 is manditory if you do the assignment.  You choose how much you want to do and turn in.__
 
 For this assignment, you can use either your Linux VM or the CCS machines.  You will likely have much better performance on the CCS machines. 
 
@@ -79,6 +79,18 @@ You are given a source node, 5, find the shortest path from the source node to r
 
 BFS gives you the shortest path from one node to all the other connected nodes.  You will need to augment the algorithm above to record the path length ( # of levels) to each node you touch.  
 
+## Reading in a graph representation
+One of the ways to represent the graph structure is using edge sets. A graph consists of nodes connected by the set of edges. In this assignment, you are given text files containing edge info. Each line contains edge represented by A, B meaning there’s an edge from node A to node B.
+
+For simplicity, we assume the length of all edges are the same (one unit).
+
+Sample edge file
+-    A, B
+-    B, C
+-    C, D
+-    D, A
+
+
 
 # Task 2: K-source Shortest Path
 Now you are given K source nodes. Find the shortest path from K nodes to all other nodes. For each source node, print out the path in an distance ordered list of “(node, distance from source)” pairs separated by commas.  
@@ -122,10 +134,9 @@ Graph  | Mean run time (101 runs) | Median run time (101 runs)
 # Deliverable
 
 - Upload bfs.c, k-bfs.c, and k-multi-bfs.c.
+- Specify what Tasks and parts you wish to be graded. 
 
 # Rubric
-
-Specify what Task and parts you wish to be graded. 
 
 - 20 points - Task 1
 
@@ -137,7 +148,7 @@ Remember the points you earn are added to your lowest Assignment grade.  You can
 
      
 ### Tips
-1. Many on-line sites refer to directed graphs.  The graphs in this assignment are undirected and do not have links that loop back to the same node. 
+1. Many on-line sites refer to BFS over directed graphs.  The graphs in this assignment are undirected and do not have links that loop back to the same node. 
 1. Commit your code changes to the repository often, this is best practice.
 1. Do not commit your .o file or your executable file to the repository, this is considered bad practice!
 1. On Functionality/Style
@@ -145,8 +156,8 @@ Remember the points you earn are added to your lowest Assignment grade.  You can
 
 ### Resources
 
-[Breadth First Search or BFS for a Graph](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
-[Breadth First Search](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/)
-[Breadth first search](https://www.programiz.com/dsa/graph-bfs)
+- [Breadth First Search or BFS for a Graph](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
+- [Breadth First Search](https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/)
+- [Breadth first search](https://www.programiz.com/dsa/graph-bfs) A nice queue implementation in C.
 
 
