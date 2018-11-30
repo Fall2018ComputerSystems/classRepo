@@ -75,14 +75,19 @@ Node 3 doesn’t have any neighbors that have not already been marked as Visited
 Since the queue is empty, we have completed the Depth First Traversal of the graph.
 
 # Task 1: Single Source Shortest Path (If you do the assignment, you must do Task 1)
-You are given a source node, 5, find the shortest path from the source node to rest of the nodes using BFS. Print out the path length from the source node to all the nodes (assume the edge cost is 1 for all edges).  Print out the path as a distance ordered list of “(node, distance from source)” pairs separated by commas.  For the example above, the list for source 0 would be: (0, 0), (1, 1), (2, 1), (3, 1), (4, 2).
+- You are given a source node, 5, find the shortest path from the source node to rest of the nodes using BFS. 
+- Print out the path length from the source node to all the nodes (assume the edge cost is 1 for all edges) as a distance ordered list of “(node, distance from source)” pairs separated by commas.  
+-- For the example above, the list for source 0 would be: (0, 0), (1, 1), (2, 1), (3, 1), (4, 2).
 
-BFS gives you the shortest path from one node to all the other connected nodes.  You will need to augment the algorithm above to record the path length ( # of levels) to each node you touch.  
+Your code should take a filename for input, generate the path list for any node on any graph in the repo, and print it out on STDOUT, using the format specified.
+- Include a function that prints out some help text on how to use the code if NO input given to the program. 
+
+BFS gives you the shortest path from one node to all the other connected nodes.  You will need to augment the algorithm above to record the path length (# of levels) to each node you touch.  
 
 ## Reading in a graph representation
-One of the ways to represent the graph structure is using edge sets. A graph consists of nodes connected by the set of edges. In this assignment, you are given text files containing edge info. Each line contains edge represented by A, B meaning there’s an edge from node A to node B.
+One of the ways to represent the graph structure is using edge sets. A graph consists of nodes connected by the set of edges. In this assignment, you are given text files containing edge info. Each line contains an edge represented by A, B meaning there’s an edge from node A to node B.
 
-For simplicity, we assume the length of all edges are the same (one unit).
+For simplicity, in this assignment we will assume the length of all edges is the same (one unit) and the edges are bidirectional, i.e, A, B implies B, A.
 
 Sample edge file
 -    A, B
@@ -98,8 +103,18 @@ Now you are given K source nodes. Find the shortest path from K nodes to all oth
 ## Part 1:
 - Write a single thread/process version to iteratively calculate the shortest path from K given nodes.
 - Write a multi-process / multi-threaded version (K threads?) to calculate shortest path to all the nodes.  You can use any of the techniques we’re covered, from forking sub-processes, to generating multiple threads explicitly, to using OpenMP.
+- Include in both versions a function that prints out some help text on how to use the code if NO input given to the program. 
 
-Graph| K nodes
+Your code should be able to accept the name of a graph file and a string of comma separated values for K. You also need to signal when to find BFS for all the nodes. 
+
+One solution is to add switches:
+```
+-f graph_filename -l list_of_source_nodes -k number_of _random_nodes_to_select
+```
+
+Another solution is multiple programs: one that loads a node list from the command line (if list of nodes is empty, find BFS for all nodes??) and another that generates a random list of nodes given a number K.  Remember to check in both versions. 
+
+Graph| K nodes (K = 32 or number of nodes in the graph, whichever is smaller)
 -----|--------
 8-nodes.txt | All nodes
 10-nodes.txt | All nodes
@@ -114,7 +129,10 @@ Graph| K nodes
 	- *Your answer here*
 
 ## Part 2:
-Compare the running time (mean and median running time) of both implementations over 101 runs for different size of graphs in the repo.  Select the K source nodes randomly (uniform) from all the nodes in the network for each run.  The node IDs range from 0 to N-1, where N is the number of nodes in the network. Add a table to the README for the mean and median running times for each size network that is in the repo. See an example below.  
+- Compare the running time (mean and median running time) of both implementations over 101 runs for different size of graphs in the repo.  
+- Select the K source nodes randomly (uniform) from all the nodes in the network for each run.  
+-- The node IDs range from 0 to N-1, where N is the number of nodes in the network. 
+- Add a table to the README for the mean and median running times for each size network that is in the repo. See an example below.  
 
 ### Questions
 
@@ -126,6 +144,9 @@ Compare the running time (mean and median running time) of both implementations 
 	- *Your answer here*
 4. What other data might you want to collect about the system environment when you ran your experiment to help you compare your results to others running on the same or different types computers?
 	- *Your answer here*
+5. What would you change or add to the experiment to improve it?
+	- *Your answer here*
+
  
 Graph  | Mean run time (101 runs) | Median run time (101 runs)
 -----------|--------------------------|---------------------------
