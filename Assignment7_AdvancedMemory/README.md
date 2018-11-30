@@ -1,6 +1,6 @@
 # Memory Allocator 2
 
-# Due November 27 at 11:59pm
+# Due November 28 at 11:59pm
 
 TODO Please edit the following information in your assignment
 
