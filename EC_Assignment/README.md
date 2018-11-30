@@ -144,10 +144,10 @@ Graph  | Mean run time (101 runs) | Median run time (101 runs)
 
 # Rubric
 
-- 30 points - Task 1
+- 20 points - Task 1
 
-- 30 points - Task 2
-	- 20 points for Part 1
+- 40 points - Task 2
+	- 30 points for Part 1
 	- 10 points for Part 2
 
 Remember the points you earn are added to your lowest Assignment grade.  You cannot go over 100% on any assignment. 
