@@ -143,6 +143,7 @@ struct proc {
 	- Note: You can use your previous lab as an additional resource to make sure all of the steps are implemented.
 2. Next, write a program called 'mycommand' that will make a call to 'cps()'
 	- This can be a very simple program.
+	- Hint: Update Makefile?
 3. Go ahead and run 'make' again, and then run your xv6.
 	- Now run the 'cps' command on the terminal to see the processes running and their priority.
 	- Congratulations on your first modification to the xv6 operating system!
